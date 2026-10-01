@@ -1,0 +1,123 @@
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+}
+.process__step {
+  position: relative;
+  border-right: 1px solid var(--line);
+}
+.process__step:last-child {
+  border-right: 0;
+}
+.process__step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease);
+}
+.process__step.is-active::before,
+.process__step.is-past::before {
+  transform: scaleX(1);
+}
+.process__step button {
+  display: grid;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1.25rem 1rem 1.5rem;
+  text-align: left;
+  color: var(--text-3);
+  transition: color 0.3s, background 0.3s;
+}
+.process__step button:hover {
+  color: var(--text);
+  background: var(--bg-raise);
+}
+.process__num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+.process__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+  font-weight: 550;
+  letter-spacing: -0.02em;
+}
+.process__step.is-active button {
+  color: var(--text);
+}
+.process__step.is-active .process__num {
+  color: var(--accent);
+}
+
+.process__panel {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(28px, 5vw, 56px) 0 0;
+  min-height: 250px;
+}
+.process__big {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+.process__big span {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 1.6vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+.process__text {
+  max-width: 48ch;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--text-2);
+}
+.process__loop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-3);
+}
+
+.process__style {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(48px, 7vw, 88px);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.process__style h3 {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--text-3);
+}
+
+@media (max-width: 720px) {
+  .process__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .process__step {
+    border-bottom: 1px solid var(--line);
+  }
+  .process__step:nth-child(3n) {
+    border-right: 0;
+  }
+  .process__step button {
+    padding: 1rem 0.75rem;
+  }
+}

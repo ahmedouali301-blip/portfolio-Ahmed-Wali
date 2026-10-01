@@ -1,0 +1,102 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+}
+.about__copy {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+.about__copy .section-head {
+  margin-bottom: 2rem;
+}
+.about__text {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 50ch;
+  color: var(--text-2);
+}
+.about__quote {
+  margin: 1.25rem 0 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+/* The story: a line that fills as you scroll and lights each stage */
+.story {
+  --p: 0;
+  position: relative;
+  display: grid;
+  gap: clamp(48px, 8vw, 96px);
+  padding-left: 44px;
+  padding-block: 8px;
+}
+.story__rail {
+  position: absolute;
+  left: 8px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--line);
+}
+.story__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: top;
+  transform: scaleY(var(--p));
+}
+.story__item {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  opacity: 0.38;
+  transition: opacity 0.5s var(--ease);
+}
+.story__item.is-on {
+  opacity: 1;
+}
+.story__node {
+  position: absolute;
+  left: -44px;
+  top: 0.55rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--line-strong);
+  transition: border-color 0.4s, background 0.4s, box-shadow 0.4s;
+}
+.story__item.is-on .story__node {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+.story__item h3 {
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+}
+.story__meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.story__text {
+  max-width: 44ch;
+  color: var(--text-2);
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .about__copy {
+    position: static;
+  }
+}

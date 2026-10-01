@@ -1,0 +1,111 @@
+.cv-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.cv-dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-dropdown__chevron {
+  transition: transform 0.25s var(--ease);
+}
+
+.cv-dropdown__chevron.is-rotated {
+  transform: rotate(180deg);
+}
+
+.cv-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 195px;
+  padding: 6px;
+  background: rgba(14, 14, 17, 0.94);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 24px rgba(155, 166, 255, 0.1);
+  z-index: 100;
+}
+
+.cv-dropdown__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cv-dropdown__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s, background 0.2s, transform 0.15s var(--ease);
+}
+
+.cv-dropdown__item:hover {
+  color: var(--text);
+  background: var(--surface-2);
+  transform: translateX(2px);
+}
+
+.cv-dropdown__flag {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.cv-dropdown__label {
+  flex: 1;
+}
+
+.cv-dropdown__icon {
+  margin-left: auto;
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.2s var(--ease), color 0.2s;
+}
+
+.cv-dropdown__item:hover .cv-dropdown__icon {
+  opacity: 1;
+  color: var(--accent);
+  transform: translateY(1px);
+}
+
+/* Hero & Mobile adaptations */
+.cv-dropdown--full-width {
+  width: 100%;
+}
+
+.cv-dropdown--full-width .cv-dropdown__trigger {
+  width: 100%;
+  justify-content: center;
+}
+
+.cv-dropdown--full-width .cv-dropdown__menu {
+  left: 0;
+  right: 0;
+  min-width: 100%;
+}

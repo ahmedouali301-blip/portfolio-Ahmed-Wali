@@ -1,0 +1,44 @@
+/* Shared atoms for the illustrative product mock-ups (Experience + Projects). */
+.ui-skel {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line-strong);
+}
+.ui-skel--dim {
+  background: var(--line);
+}
+.ui-skel--accent {
+  background: var(--accent-line);
+}
+.ui-pill {
+  display: inline-block;
+  width: 44px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-line);
+  background: var(--accent-soft);
+}
+.ui-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  flex-shrink: 0;
+}
+.ui-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ui-dot--off {
+  background: var(--line-strong);
+}
+.mock-caption {
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  color: var(--text-3);
+}
